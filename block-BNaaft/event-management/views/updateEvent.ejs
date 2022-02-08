@@ -1,0 +1,62 @@
+<%- include('partials/header') -%> <%- include('partials/navbar') -%>
+<div class="body">
+  <div class="container">
+    <div class="form-control new-event">
+      <form action="/events/<%= events.id %>" method="POST">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter Title"
+          value="<%= events.title %>"
+          required
+        />
+        <textarea
+          name="summary"
+          id="summary"
+          cols="30"
+          rows="10"
+          placeholder="Enter Summary"
+        >
+         <%= events.summary %></textarea
+        >
+        <input
+          type="text"
+          name="host"
+          value="<%= events.host %>"
+          id="host"
+          placeholder="Enter Host"
+          required
+        />
+        <label for="start_date"
+          >Start Date
+          <input
+            type="date"
+            name="start_date"
+            id="start_date"
+            value="<%= events.start_date %>"
+          />
+        </label>
+        <label for="end_date"
+          >End Date
+          <input
+            type="date"
+            name="end_date"
+            id="end_start"
+            value="<%= events.end_date %>"
+          />
+        </label>
+        <input
+          type="text"
+          name="location"
+          value="<%= events.location %>"
+          id="location"
+          placeholder="Enter Event Location"
+          required
+        />
+        <input type="submit" value="Update Event" />
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
