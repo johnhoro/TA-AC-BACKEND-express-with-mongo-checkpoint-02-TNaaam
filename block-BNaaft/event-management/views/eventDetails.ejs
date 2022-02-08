@@ -1,0 +1,75 @@
+<%- include('partials/header') -%> <%- include('partials/navbar') -%>
+<div class="container">
+  <main>
+    <section>
+      <div class="event">
+        <div class="border">
+          <h2><%= event.title %></h2>
+          <span class="likes-content"
+            >Likes This Event
+            <a href="/events/<%= event.id %>/likes"
+              ><i class="far fa-thumbs-up"></i><%= event.likes %></a
+            >
+          </span>
+          <div class="tag-box">
+            <% event.category.forEach(cat => { %>
+            <span class="tag"> <%= cat.name %> </span>
+            <% }) %>
+          </div>
+          <p class="summary"><%= event.summary %></p>
+          <div class="box">
+            <span>Host :- <%= event.host %></span>
+            <span>Start Date :- <%= event.start_date %></span>
+            <span>End Date :- <%= event.end_date %></span>
+            <span>Location :- <%= event.location %></span>
+          </div>
+          <div>
+            <a href="/events/<%= event.id %>/edit">
+              <button class="btn-edit">Edit</button>
+            </a>
+            <a href="/events/<%= event.id %>/delete">
+              <button class="btn-delete">Delete</button>
+            </a>
+          </div>
+        </div>
+        <form
+          action="/events/<%= event._id%>/remarks"
+          method="POST"
+          class="comment-box"
+        >
+          <input
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Enter Author"
+            required
+          />
+          <textarea
+            name="content"
+            id="content"
+            rows="5"
+            placeholder="Enter Content"
+            required
+          ></textarea>
+          <input type="submit" value="Add Remark" class="btn-remark" />
+        </form>
+        <h3>Add Remark</h3>
+        <hr />
+        <% event.remark.forEach(even => { %>
+        <div class="remark">
+          <h3><%= even.author %></h3>
+          <span><%= even.content %></span>
+          <span><a href="/remarks/<%= even.id %>/edit">Edit</a></span>
+          <span><a href="/remarks/<%= even.id %>/delete">Delete</a></span>
+          <span class="likes">
+            <a href="/remarks/<%= even.id %>/likes"
+              ><i class="far fa-thumbs-up"></i><%= even.likes %></a
+            >
+          </span>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+</div>
+<%- include('partials/footer') -%>

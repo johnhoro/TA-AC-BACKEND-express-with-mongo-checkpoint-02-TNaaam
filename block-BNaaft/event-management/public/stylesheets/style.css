@@ -1,0 +1,494 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1.5;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* GENERAL STYLE */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  background-color: rgb(254, 249, 247);
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 1rem 0;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-items {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.direction {
+  flex-direction: column;
+}
+
+.body {
+  height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background-color: black;
+}
+.navbar a {
+  text-transform: capitalize;
+  font-weight: 600;
+  padding-left: 2rem;
+  color: white;
+}
+.navbar {
+  z-index: 1;
+}
+.sub-menu-box {
+  position: relative;
+}
+.sub-menu {
+  position: absolute;
+  background-color: black;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  width: 140px;
+  border-radius: 4px;
+  text-align: center;
+  display: none;
+}
+.sub-menu-box:hover .sub-menu {
+  display: block;
+}
+.sub-menu li {
+  margin: 8px 0;
+}
+
+.likes-content {
+  margin-right: 0.3rem;
+  font-size: 0.7rem;
+}
+.brand a img {
+  width: 100px;
+}
+
+.overlay {
+  background-color: rgb(0 0 0 / 0.3);
+  height: 100vh;
+  position: relative;
+}
+.hero-image {
+  background-image: url("/images/event.jpeg");
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 53px;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+.hero-text button {
+  padding: 0.7rem 1.3rem;
+  margin: 1.2rem 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: rgb(0 0 0 / 0.8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.hero-text button:hover {
+  background-color: black;
+}
+
+/* SORT */
+
+.sort-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.date {
+  width: 30%;
+}
+.date a {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.location {
+  width: 70%;
+}
+.location form {
+  margin-left: 1rem;
+  display: flex;
+}
+
+.btn-search {
+  background-color: rgb(40, 116, 240, 0.7);
+  color: white;
+  padding: 0.3rem 0.5rem;
+  margin-left: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.event {
+  width: 100%;
+  padding: 0.2rem 0.3rem;
+}
+.update {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+.event-list {
+  width: 70%;
+  padding: 0.2rem 0.3rem;
+}
+
+.border {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgb(44 39 39 / 10%),
+    -3px -3px 10px rgb(44 39 39 / 10%);
+}
+
+label {
+  font-size: 1.2rem;
+}
+.summary {
+  word-wrap: break-word;
+  letter-spacing: 1px;
+}
+
+/* CATEGORY */
+
+.sidebar {
+  width: 30%;
+  color: white;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgb(44 39 39 / 10%),
+    -3px -3px 10px rgb(44 39 39 / 10%);
+}
+
+.category-list {
+  margin: 0 1rem;
+  padding: 0.3rem;
+}
+.category-list ul li {
+  border-bottom: 1px solid #cccdcf;
+  color: rgb(78, 77, 77);
+  font-size: 1.2rem;
+  text-align: left;
+  margin-left: 1rem;
+  margin-bottom: 0.9rem;
+}
+.add-category {
+  margin-right: 1rem;
+}
+
+.category-list li {
+  color: black;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+/* EVENTS LIST */
+
+.read-btn {
+  border: 0;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  background: rgb(255, 127, 80);
+  color: white;
+  cursor: pointer;
+}
+
+.border-list {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgb(44 39 39 / 10%),
+    -3px -3px 10px rgb(44 39 39 / 10%);
+}
+
+.btn-edit {
+  background-color: rgb(40, 116, 240, 0.7);
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+.btn-delete {
+  background-color: rgb(255, 127, 80);
+  border: none;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.sidebar h3 {
+  font-size: 1.7rem;
+  color: black;
+  margin-left: 1rem;
+}
+
+/* EVENT_DETAILS */
+
+.tag-box {
+  margin: 1rem 0;
+}
+.tag {
+  border: 1px solid #cccdcf;
+  padding: 1px 15px;
+  color: #909194;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+h2 {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.comment-box {
+  width: 400px;
+  margin-left: 0;
+  margin-top: 1rem;
+}
+.remark {
+  margin: 0.8rem 0;
+}
+.btn-remark {
+  background-color: rgb(154, 205, 50);
+}
+.likes a {
+  color: black;
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.new-category-box {
+  width: 500px;
+  margin: 2rem auto;
+}
+
+.new-event {
+  width: 700px;
+  margin: 2rem auto;
+}
+#name {
+  margin-bottom: 1rem;
+}
+textarea {
+  margin: 1rem 0;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 10px 2px;
+}
+.form-control label {
+  font-size: 1rem;
+}
+.form-control .check-box {
+  width: 20px;
+}
+
+#location {
+  margin: 1rem 0;
+}
+input[type="submit"] {
+  background-color: rgb(154, 205, 50);
+  color: black;
+  border: 0;
+  padding: 0.7rem 0;
+}
+.category-list {
+  margin: 0 auto;
+}
+.remark-box {
+  background: burlywood;
+  margin: 0.3rem 0;
+  border-radius: 15px;
+  padding: 0 0.5rem;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  padding: 1rem;
+  color: white;
+}
+footer a {
+  color: white;
+  margin-left: 1rem;
+}
