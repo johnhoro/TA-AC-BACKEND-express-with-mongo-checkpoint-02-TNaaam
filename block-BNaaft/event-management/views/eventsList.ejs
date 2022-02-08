@@ -1,0 +1,51 @@
+<%- include('partials/header') -%> <%- include('partials/navbar') -%>
+
+<div class="container">
+  <div class="sort-box">
+    <div class="date">
+      <a href="/events/sortdate" class="sort">Sort By Date</a>
+    </div>
+    <div class="location">
+      <form action="/events/location" method="POST">
+        <input type="text" name="location" placeholder="Search by location" />
+        <button type="submit" class="btn-search">Search</button>
+      </form>
+    </div>
+  </div>
+  <main>
+    <section class="flex">
+      <aside class="sidebar">
+        <div class="flex space-between align-items">
+          <h3>Category</h3>
+          <span class="add-category"
+            ><a href="/category/new"><i class="fas fa-plus"></i></a
+          ></span>
+        </div>
+        <div class="category-list">
+          <ul>
+            <% category.forEach(c => { %>
+            <li><a href="/events?category=<%= c.id %>"><%= c.name %></a></li>
+            <% }) %>
+          </ul>
+        </div>
+      </aside>
+      <div class="event-list">
+        <% events.forEach(event => { %>
+        <div class="border-list">
+          <h2><%= event.title %></h2>
+          <span class="likes-content"
+            >Likes This Event <i class="fa fa-thumbs-o-up"></i> <%= event.likes
+            %></span
+          >
+          <p class="summary"><%= event.summary.substr(0,100) %></p>
+          <a href="/events/<%= event._id %>"
+            ><button class="read-btn">Know More</button></a
+          >
+        </div>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+</div>
+
+<%- include('partials/footer') -%>

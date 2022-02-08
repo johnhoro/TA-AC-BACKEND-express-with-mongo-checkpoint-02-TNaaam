@@ -1,0 +1,32 @@
+<%- include('partials/header') -%> <%- include('partials/navbar') -%>
+<div class="body">
+  <div class="container">
+    <div class="event update">
+      <form
+        method="POST"
+        action="/remarks/<%= remark.id %>"
+        class="comment-box"
+      >
+        <input
+          type="text"
+          name="author"
+          id="author"
+          value="<%= remark.author %>"
+          placeholder="Enter Author"
+          required
+        />
+        <textarea
+          name="content"
+          id="content"
+          rows="5"
+          placeholder="Enter Content"
+          required
+        >
+             <%= remark.content %></textarea
+        >
+        <input type="submit" value="Update Remark" />
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
